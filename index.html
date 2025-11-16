@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>avada-eBike</title>
+    <link rel="stylesheet" href="src/style/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <main>
+        <section class="row min-h-[750px] bg-[#373733f0]">
+            <div class="row h-full ">
+                <header class="w-full bg-white  h-[150px] md:h-[90px] ">
+                    <div class="w-full h-full md:flex md:h-full ">
+                        <figure class="logo w-full h-1/3 md:w-1/6 md:h-full p-6 flex justify-start items-center ">
+                            <img class="cursor-pointer w-[300px] h-[300px] m-2  "
+                                src="src/img/imgi_1_ebike-logo-large.svg" alt="">
+                        </figure>
+                        <div class="w-full h-1/3 md:w-1/6 md:h-full flex justify-start items-center pl-10 gap-3">
+                            <button class=" text-black hover:scale-125 transition ">
+                                <i class="cursor-pointer bi bi-search text-xl"></i>
+                            </button>
+                            <div class="flex w-64 md:w-48 py-2 bg-white">
+                                <input type="text" placeholder="Search this site....."
+                                    class="bg-transparent focus:outline-none text-sm md:text-base w-48 md:w-48" />
+                            </div>
+                        </div>
+
+                        <!-- دکمه همبرگر فقط برای موبایل -->
+                        <div class="md:hidden flex items-center justify-start pl-10">
+                            <button id="menu-btn" class="text-2xl text-black  transition">
+                                <i class="bi bi-list"></i>
+                            </button>
+                        </div>
+                        <!--منوی موبایل  -->
+                        <div id="mobile-menu" class="md:hidden fixed top-[150px] left-0 w-full bg-white shadow-xl z-100 overflow-hidden max-h-0 
+                                    transition-all duration-500 ease-in-out flex flex-col">
+                            <a href="#" class="py-5 px-6 border-b hover:bg-gray-100">Home</a>
+                            <a href="#" class="py-5 px-6 border-b hover:bg-gray-100">About Us</a>
+                            <a href="#" class="py-5 px-6 border-b hover:bg-gray-100">Reviews</a>
+                            <a href="#" class="py-5 px-6 border-b hover:bg-gray-100">Accessories</a>
+                            <a href="#" class="py-5 px-6 border-b hover:bg-gray-100">Bikes</a>
+                            <a href="#" class="py-5 px-6 border-b hover:bg-gray-100">Contact</a>
+                            <a href="#" class="py-5 px-6 border-b hover:bg-gray-100">WooCommerce My Account </a>
+                            <a href="#" class="py-5 px-6 border-b hover:bg-gray-100">WooCommerce Cart</a>
+                        </div>
+
+                        <nav class="hidden md:flex md:w-2/3 ">
+                            <ul
+                                class="w-full h-full *:md:h-[50px] -ml-10 flex justify-end items-center *:w-[90px] *:flex *:justify-center *:items-center *:text-center *:cursor-pointer ">
+                                <li class="text-red-600">Home</li>
+                                <li class="hover:text-red-600">About Us</li>
+                                <li class="hover:text-red-600">Reviews</li>
+                                <li class="hover:text-red-600">Accessories</li>
+                                <li class="hover:text-red-600">Bikes</li>
+                                <li class="hover:text-red-600">Contact</li>
+                                <li class="text-2xl relative group ">
+                                    <i class=" bi bi-person-circle"></i>
+                                    <div class="form absolute z-30 top-10 right-0 bg-white shadow-xl rounded-xl p-4 w-64 opacity-0 scale-95 
+                                                group-hover:opacity-100 group-hover:scale-100 transition duration-200 ease-out 
+                                                pointer-events-none group-hover:pointer-events-auto">
+                                        <input type="text" placeholder="Username"
+                                            class="w-full border rounded-lg p-2 mb-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                        <input type="password" placeholder="Password "
+                                            class="w-full border rounded-lg p-2 mb-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                        <label class="flex items-center text-sm mb-3 cursor-pointer">
+                                            <input type="checkbox" class="ml-2 accent-teal-600">
+                                            Remember Me
+                                        </label>
+                                        <button
+                                            class="bg-red-600 ml-32 cursor-pointer text-white w-[70px] h-[41px] text-[16px] hover:bg-red-800 transition">
+                                            Log In
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class=" text-2xl">
+                                    <i class="bi bi-bag"></i>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+
+                </header>
+                <div id="promo-bar" class="w-full h-[60px] md:h-[60px] bg-[#292823f0] bg-[url('../img/imgi_30_info-bg.svg')]
+            flex justify-center items-center text-white opacity-0">
+                    <h2>Get 10% off your first purchase with coupon code EBIKE10</h2>
+                </div>
+
+                <!-- بخش عکس پایین -->
+                <div id="hero-img" class="hero-img h-[550px] md:w-full md:h-[655px] relative overflow-hidden ">
+                    <div class="md:w-full md:h-full">
+                        <img src="src/img/imgi_31_hero-1-scaled.jpg" alt=""
+                            class="hidden md:block w-full h-full object-cover object-center">
+                        <img src="src/img/imgi_34_info-7.jpg" alt=""
+                            class="block md:hidden w-full h-full object-cover object-center">
+
+                        <div class="scroll-container absolute inset-0 flex justify-center items-center md:-mt-20">
+                            <div class="text-inner text text-center z-50">
+                                <p class="text-lg md:text-2xl mb-2 drop-shadow-lg text-white brightness-125">Experience
+                                    the future of
+                                    biking</p>
+                                <h2
+                                    class="text-4xl md:text-7xl font-bold mb-6 drop-shadow-lg text-white brightness-125">
+                                    Ride Into The Future With <br> Our Electric Bikes
+                                </h2>
+                                <button
+                                    class="bg-red-600 cursor-pointer hover:bg-red-800 text-white px-6 py-3 text-lg font-medium transition">
+                                    Browse Our Bikes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+        </section>
+        <!-- ///////////////////////////////////end sec1///////////////////////////////////////// -->
+
+        <section class="sec2 w-full bg-white mt-0 py-10">
+            <div
+                class="w-full flex flex-col gap-8 md:gap-0 md:px-32 md:flex-row justify-center items-center text-center md:text-left">
+
+                <!-- کارت ۱ -->
+                <div class="w-full md:w-1/3 flex flex-col md:flex-row justify-center items-center gap-4">
+                    <img src="src/img/imgi_2_info-3.jpg" alt="" class="w-[85px] h-[85px] rounded-full">
+                    <div class="flex flex-col justify-center">
+                        <h2 class="font-extrabold text-[20px] text-neutral-800">Fast & Free Shipping</h2>
+                        <p>Aliquet arcu ac habitant</p>
+                    </div>
+                </div>
+
+                <!-- کارت ۲ -->
+                <div class="w-full md:w-1/3 flex flex-col md:flex-row justify-center items-center gap-4">
+                    <img src="src/img/imgi_3_info-4.jpg" alt="" class="w-[85px] h-[85px] rounded-full">
+                    <div class="flex flex-col justify-center">
+                        <h2 class="font-extrabold text-[20px] text-neutral-800">Eco-Friendly</h2>
+                        <p>Aliquet arcu ac habitant</p>
+                    </div>
+                </div>
+
+                <!-- کارت ۳ -->
+                <div class="w-full md:w-1/3 flex flex-col md:flex-row justify-center items-center gap-4">
+                    <img src="src/img/imgi_4_info-5.jpg" alt="" class="w-[85px] h-[85px] rounded-full">
+                    <div class="flex flex-col justify-center">
+                        <h2 class="font-extrabold text-[20px] text-neutral-800">2-Year Warranty</h2>
+                        <p>Aliquet arcu ac habitant</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- /////////////////////////////////////////end sec2//////////////////////////////////// -->
+
+        <section class="sec3 w-full bg-blue-50 min-h[800px] bg-[url('../img/imgi_30_info-bg.svg')] ">
+            <div class="w-full h-full flex flex-col justify-center items-center gap-10 p-10 ">
+                <div class=" w-full h-1/4 flex flex-col justify-center items-center *:text-center mt-20 gap-5">
+                    <h2 class="text-5xl font-extrabold text-neutral-800">Endless possibilities</h2>
+                    <p class="text-[16px]">Nec sed lectus in rhoncus tellus nulla dui vestibulum suspendisse. Velit odio
+                        et tristique <br> diam
+                        et euismod. Hac nam vestibulum sed penatibus.</p>
+                </div>
+                <div
+                    class="flex flex-col *:cursor-pointer md:w-full md:flex md:flex-row justify-center items-center md:p-28 gap-10 md:-mt-12">
+
+                    <!-- کارت ۱ -->
+                    <div
+                        class="card hover:scale-[1.05] decoration-1 translate-x-2 relative flex justify-center items-center">
+                        <img src="src/img/imgi_33_info-6.jpg" alt=""
+                            class=" shadow-2xl w-[410px] h-[200px] md:w-[350px] md:h-[350px] ">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-end items-center text-white *:brightness-125  text-center bg-black/30">
+                            <h2 class="text-3xl font-bold drop-shadow-lg ">Commuting </h2>
+                            <p class="text-2xl drop-shadow-md mb-12">Aliquet arcu ac habitant </p>
+                        </div>
+                    </div>
+                    <!-- کارت ۲ -->
+                    <div
+                        class="card hover:scale-[1.05] duration-700 translate-x-2  relative flex justify-center items-center">
+                        <img src="src/img/imgi_4_avatar-1.jpg" alt="" class="md:hidden shadow-2xl w-[410px] h-[200px]">
+                        <img src="src/img/imgi_34_info-7.jpg" alt=""
+                            class="hidden md:flex md:shadow-2xl md:w-[350px] md:h-[350px]">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-end items-center text-white text-center bg-black/30">
+                            <h2 class="text-3xl font-bold drop-shadow-lg "> Travel</h2>
+                            <p class="text-2xl drop-shadow-md mb-12">Aliquet arcu ac habitant</p>
+                        </div>
+                    </div>
+                    <!-- کارت ۳ -->
+                    <div
+                        class="card hover:scale-[1.05] decoration-1 translate-x-2 relative flex justify-center items-center ">
+                        <img src="src/img/imgi_35_info-8.jpg" alt=""
+                            class=" shadow-2xl w-[410px] h-[200px] md:w-[350px] md:h-[350px]">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-end items-center text-white text-center bg-black/30 ">
+                            <h2 class="text-3xl font-bold drop-shadow-lg ">Exercise</h2>
+                            <p class="text-2xl drop-shadow-md mb-12">Aliquet arcu ac habitant</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- //////////////////////////////////////////end sec3////////////////////////////////// -->
+
+        <section class="sec4 w-full min-h-[800px]  ">
+            <div class="w-full h-full flex flex-col md:flex-row md:justify-center md:items-center md:mt-16 ">
+                <div class="md:w-1/2 h-1/2 md:flex md:flex-col md:p-10 md:-mt-20">
+                    <div class="w-full h-1/3 flex flex-wrap p-6 gap-4 mt-8 md:w-10/12 md:ml-28 ">
+                        <h2 class="text-5xl font-extrabold text-neutral-800">The Best Specs For Your Bike</h2>
+                        <p class="text-[20px]">Nec sed lectus in rhoncus tellus nulla dui vestibulum suspendisse velit
+                            odio et tristique.</p>
+                    </div>
+                    <div class="w-full h-1/3 flex flex-wrap mt-7 gap-4 ">
+                        <div
+                            class="cursor-pointer w-full h-full flex flex-col p-4 *:text-neutral-800 md:flex md:flex-row md:justify-center md:gap-10 text-3xl font-extrabold mx-8">
+                            <span class=""><i class="bi bi-lightning-charge"></i> 700 Watts</span>
+                            <span><i class="bi bi-stopwatch"></i> 80 Miles</span>
+                        </div>
+                        <div
+                            class="cursor-pointer span w-full h-full flex flex-col p-4 *:text-neutral-800 md:flex md:flex-row md:justify-center md:gap-10 text-3xl font-extrabold mx-8">
+                            <span><i class="bi bi-lock"></i> 60 Pounds</span>
+                            <span><i class="bi bi-speedometer2"></i> 20 Mph</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="w-full h-1/3 p-10 md:w-1/2 ">
+                    <img src="src/img/imgi_15_bike-4-800x792.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- ////////////////////////////////////end sec4/////////////////////////////////////////-->
+
+        <section id="section-5"
+            class="relative sec5 w-full min-h-screen bg-[url('../img/imgi_34_info-9-scaled.jpg')] bg-no-repeat bg-center bg-cover">
+            <!-- لایه تاریک -->
+            <div class="absolute inset-0 bg-neutral-700/30"></div>
+
+            <!-- کانتینر متن -->
+            <div class=" absolute inset-0 flex justify-center items-center  ">
+                <div
+                    class=" text-inner text-center z-10 md:max-w-2/3 px-4  flex flex-col justify-center items-center -mt-10">
+                    <span class="text-9xl text-red-700">“</span>
+                    <h2
+                        class="text-white w-full md:w-full text-center drop-shadow-lg text-3xl md:text-3xl font-extrabold">
+                        “Your Electric Bike Has Been A Game-Changer For Me. It’s Lightweight And Easy To Maneuver, And
+                        The Battery Lasts For Hours. Thanks For Such A Great Product!”</h2>
+
+                    <img src="src/img/imgi_4_avatar-1.jpg" class="w-16 h-16 rounded-full mt-6 " />
+                    <p class="text-white text-2xl font-bold mt-2">Samantha Smith</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- /////////////////////////////////end sec5///////////////////////////////////// -->
+
+        <section class="sec6 w-full min-h-screen flex items-center ">
+            <div
+                class="w-full h-full border-amber-400 flex flex-col justify-center items-center gap-10 md:mb-20 md:gap-3">
+                <div
+                    class="w-5/6 h-[250px] text-center justify-center items-center mt-24 md:mt-16 md:flex md:flex-col md:justify-center md:items-center">
+                    <h2 class="text-6xl mb-2 font-extrabold md:text-5xl text-neutral-800">An E-bike For Everyone</h2>
+                    <p>Nec sed lectus in rhoncus tellus nulla dui vestibulum suspendisse. Velit odio et tristique <br>
+                        diam
+                        et euismod. Hac nam vestibulum sed penatibus.</p>
+                </div>
+
+                <div
+                    class="w-full flex flex-col *:cursor-pointer gap-10 justify-center items-center mb-20 md:flex md:flex-row ">
+                    <figure
+                        class="relative w-5/6 h-[500px] hover:-translate-y-3 transition-transform duration-400 md:w-2/5 md:h-[500px] flex justify-center items-center border rounded-2xl border-gray-300">
+
+                        <figcaption class="absolute top-28 left-8 md:top-16 md:left-32 w-full p-4 text-black  ">
+                            <h2 class="text-3xl font-extrabold">
+                                Thunderbolt
+                                <span class="text-[18px] font-bold align-super">Starts at $1,999</span>
+                            </h2>
+
+                            <p>Designed for power and speed</p>
+                        </figcaption>
+                        <img src="src/img/imgi_7_bike-2.jpg" alt="" class="pt-60">
+                    </figure>
+                    <figure
+                        class="relative w-5/6 h-[500px] hover:-translate-y-3  transition-transform duration-400 md:w-2/5  flex justify-center items-center border rounded-2xl border-gray-300">
+
+                        <figcaption class="absolute top-28 left-12 md:top-16 md:left-32 w-full p-4 text-black ">
+                            <h2 class="text-3xl font-extrabold ">
+                                EcoCruiser
+                                <span class="text-[18px] font-bold align-super">Starts at $1,599</span>
+                            </h2>
+
+                            <p>Designed for Eco-Counscious riders</p>
+                        </figcaption>
+
+                        <img src="src/img/imgi_8_bike-3.jpg" alt="" class="pt-60 ">
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+        <!-- ////////////////////////////////////////////////end sec6////////////////////////////////////////// -->
+
+        <section class="sec7 w-full min-h-screen bg-[#f7f7f7] ">
+
+            <div class="w-full h-full flex flex-col">
+
+                <div
+                    class="w-full h-1/3 flex flex-wrap p-6 gap-4 mt-16 md:w-10/12 md:ml-28 md:flex md:flex-col md:mt-24 md:-mb-14 ">
+                    <h2 class="text-5xl font-extrabold md:-ml-6 text-neutral-800 ">The Latest in E-Bike News</h2>
+                    <p class="text-[18px] md:-ml-6">Nec sed lectus in rhoncus tellus nulla dui vestibulum.</p>
+                </div>
+
+                <div
+                    class="w-full h-auto *:cursor-pointer flex flex-col justify-center items-center *:gap-12 gap-10 mt-8 mb-20 md:flex md:flex-row md:p-28 md:mt-4">
+                    <figure
+                        class="w-5/6 h-auto hover:scale-[1.05] transition duration-400 md:w-3/4 flex flex-col justify-center items-center bg-white">
+                        <img src="src/img/imgi_9_blog-3.jpg" alt="" class="w-full ">
+                        <figcaption class="w-4/5 h-auto flex flex-col justify-center items-center gap-4 mb-14">
+                            <h2 class="text-[25px] mr-10 font-bold md:mr-16 text-neutral-800">E-Bikes vs. <br>
+                                Traditional Bikes: <br> Which is
+                                Right for You?</h2>
+                            <p class="text-[19px] mr-6 md:mr-11">Gravida ultricies interdum risus <br> adipiscing non.
+                                Ornare
+                                leo eu <br> imperdiet.</p>
+                            <button
+                                class="bg-red-600  cursor-pointer hover:bg-red-800 text-white px-6 py-3  font-medium mr-36 mt-8 transition">
+                                Continue Reading
+                            </button>
+                        </figcaption>
+                    </figure>
+                    <figure
+                        class="w-5/6 h-auto hover:scale-[1.05] transition duration-400 md:w-3/4 flex flex-col justify-center items-center bg-white">
+                        <img src="src/img/imgi_10_blog-2.jpg" alt="" class="w-full ">
+                        <figcaption class="w-4/5 h-auto flex flex-col justify-center items-center gap-4 mb-14">
+                            <h2 class="text-[24px] mr-22 font-bold md:mr-24 text-neutral-800">The Best E-Bikes for <br>
+                                Commuting: Our <br>
+                                Editor’s Top Picks</h2>
+                            <p class="text-[19px] mr-8 md:mr-11">Gravida ultricies interdum risus <br> adipiscing non.
+                                Ornare
+                                leo eu <br> imperdiet.</p>
+                            <button
+                                class="bg-red-600  cursor-pointer hover:bg-red-800 text-white px-6 py-3  font-medium mr-36 mt-8 transition">
+                                Continue Reading
+                            </button>
+                        </figcaption>
+                    </figure>
+                    <figure
+                        class="w-5/6 h-auto hover:scale-[1.05] transition duration-400 md:w-3/4 flex flex-col justify-center items-center bg-white">
+                        <img src="src/img/imgi_11_blog-1.jpg" alt="" class="w-full ">
+                        <figcaption class="w-4/5 h-auto flex flex-col justify-center items-center gap-4 mb-14 ">
+                            <h2 class="mr-20 text-[22px] md:text-[25px] font-bold md:mr-16 text-neutral-800">The Future
+                                of E-Bikes: <br> A Look at What’s <br>
+                                Coming Next</h2>
+                            <p class="text-[19px] mr-7 md:mr-10">Gravida ultricies interdum risus <br> adipiscing non.
+                                Ornare
+                                leo eu <br> imperdiet.</p>
+                            <button
+                                class="bg-red-600  cursor-pointer hover:bg-red-800 text-white px-6 py-3  font-medium mr-36 mt-8  transition">
+                                Continue Reading
+                            </button>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ////////////////////////////////////////////end sec7////////////////////////////////////////////// -->
+
+        <section id="section" class="relative sec8 w-full h-[70vh] md:h-[80vh]
+           bg-[url('../img/imgi_32_hero-2-scaled.jpg')] bg-no-repeat bg-center bg-cover">
+
+            <div class="absolute inset-0 bg-gray-700/35"></div>
+
+            <div
+                class="text-white text-[20px] relative z-10 w-full h-full flex flex-col justify-center items-center gap-6">
+                <p>Experience the future of biking</p>
+
+                <h2 class="w-3/4 md:w-3/5 text-center drop-shadow-lg text-5xl md:text-6xl font-extrabold">
+                    Ride into the future with our <br> electric bikes
+                </h2>
+
+                <button
+                    class="bg-red-600 cursor-pointer hover:bg-red-800 text-white px-6 py-3 font-medium mt-8 transition">
+                    <i class="bi bi-lightning-charge"></i> Browse Our Products
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- ///////////////////////////////////////footer////////////////////////////////////////////////////// -->
+
+        <footer class="bg-[#292823] bg-[url('../img/imgi_30_info-bg.svg')] text-gray-200 py-14 md:py-20">
+            <div class="container mx-auto px-4">
+                <div class="w-full h-1/3 flex flex-wrap p-6 gap-4 mt-16 md:w-10/12 md:ml-32 md:flex  md:mb-16 ">
+                    <h2 class="text-5xl font-extrabold md:-ml-6">Ride with freedom and fun, <br> <span
+                            class="text-red-600">Ride like a pro.</span> </h2>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
+                    <div class="space-y-6 w-full md:w-1/3 flex flex-col md:ml-32">
+                        <img src="src/img/imgi_12_footer-logo.svg" alt="" class="w-72">
+                        <button class="bg-red-600 text-white px-6 py-3 hover:bg-red-800 rounded-lg font-semibold w-max">
+                            (555) 802-1234
+                        </button>
+                        <input type="email" placeholder="your@email.com"
+                            class="bg-[#1110] w-44 px-5 py-3 border border-gray-600 hover:bg-black hover:border-none rounded-lg md:w-44 outline-none" />
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3  w-full md:w-2/3 ">
+                        <div>
+                            <h3 class="font-bold mb-4 text-lg">Explore</h3>
+                            <ul class="space-y-4">
+                                <li><a href="#" class="hover:text-white hover-double-line  ">About Us</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Our Team</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Our Story</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Our Mission</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Our Vision</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-4 text-lg">Products</h3>
+                            <ul class="space-y-4">
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Mountain Bikes</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Road Bikes</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">City Bikes</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Folding Bikes</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Accessories</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-4 text-lg">Support</h3>
+                            <ul class="space-y-4">
+                                <li><a href="#" class="hover:text-white hover-double-line  ">FAQ</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Contact Us</a></li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Warranty Information</a>
+                                </li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Shipping Information</a>
+                                </li>
+                                <li><a href="#" class="hover:text-white hover-double-line  ">Returns & Exchanges</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div
+                    class=" mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 md:m-12 md:mt-20  md:mb-10">
+                    <p class="text-sm text-center md:text-left md:ml-20 text-white">
+                        © 2012 - 2023 • <a href=""><span class="text-red-500">Avada</span></a> is a
+                        <a href=""><span class="text-red-500">Website Builder</span></a> for
+                        <a href=""><span class="text-red-500"> WordPress</span></a> and
+                        <a href=""><span class="text-red-500">eCommerce</span></a> • All Rights Reserved • Developed by
+                        <a href=""><span class="text-red-500">ThemeFusion</span></a>
+                    </p>
+                    <div class="flex items-center gap-5 text-xl md:flex md:flex-row md:mr-10">
+                        <a href="#" class="hover:text-red-500"><i class="bi bi-facebook text-3xl"></i></a>
+                        <a href="#" class="hover:text-red-500"><i class="bi bi-twitter-x text-3xl"></i></a>
+                        <a href="#" class="hover:text-red-500"><i class="bi bi-instagram text-3xl"></i></a>
+                        <a href="#" class="hover:text-red-500"><i class="bi bi-youtube text-3xl"></i></a>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </footer>
+
+        <div class="hossein">
+            <figure>
+                <img src="src/img/hossein.saedmokam.png" alt="">
+                <figcaption>Hossein Haedmohkam</figcaption>
+            </figure>
+        </div>
+    </main>
+</body>
+<script src="src/style/app.js"></script>
+
+</html>
