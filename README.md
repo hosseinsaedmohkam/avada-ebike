@@ -1,6 +1,6 @@
 # avada-ebike
 ![Image](https://github.com/user-attachments/assets/10ec449c-8045-437d-8674-0e81ee6f1ec4)
-
+![Image](https://github.com/user-attachments/assets/dfb8364b-d286-45c1-b286-ed48c30be6ee)
 
 [Demo Project](https://hosseinsaedmohkam.github.io/avada-ebike/)
 
